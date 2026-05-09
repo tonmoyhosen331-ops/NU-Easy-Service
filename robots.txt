@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nu-easy-service.vercel.app/sitemap.xml
