@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Tiro+Bangla:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
 <style>
 :root {
   --green: #16a34a;
@@ -1065,7 +1067,6 @@ body {
   background:#0084FF;
 }
 </style>
-</head>
 <body>
 
 <!-- ===== NAVBAR ===== -->
@@ -1086,7 +1087,9 @@ body {
     <ul class="nav-menu" id="navMenu">
       <li><a onclick="showPage('home')" id="nav-home" class="active">হোম</a></li>
       <li><a onclick="showPage('sanad')" id="nav-sanad">মূল সনদ</a></li>
+      <li><a onclick="showPage('provisional')" id="nav-sanad">সাময়িক সনদ</a></li>
       <li><a onclick="showPage('transcript')" id="nav-transcript">ট্রান্সক্রিপ্ট</a></li>
+      <li><a onclick="showPage('marksheet')" id="nav-sanad">মার্কশীট</a></li>
       <li><a onclick="showPage('correction')" id="nav-correction">সংশোধন</a></li>
       <li><a onclick="showPage('attestation')" id="nav-attestation">সত্যায়ন</a></li>
       <li><a onclick="showPage('duplicate')" id="nav-duplicate">হারানো/দ্বি-নকল</a></li>
@@ -1104,9 +1107,9 @@ body {
   <div class="mobile-nav" id="mobileNav">
     <a onclick="showPage('home');toggleMobile()">🏠 হোম</a>
     <a onclick="showPage('sanad');toggleMobile()">📜 মূল সনদ</a>
-    <a onclick="showPage('sanad');toggleMobile()">📜 মূল সনদ</a>
-    <a onclick="showPage('sanad');toggleMobile()">📜 মূল সনদ</a>
+    <a onclick="showPage('Provisional');toggleMobile()">📝 সাময়িক সনদ</a>
     <a onclick="showPage('transcript');toggleMobile()">📋 ট্রান্সক্রিপ্ট</a>
+    <a onclick="showPage('marksheet');toggleMobile()">📊 মার্কশীট</a>
     <a onclick="showPage('correction');toggleMobile()">✏️ সংশোধন</a>
     <a onclick="showPage('attestation');toggleMobile()">✅ সত্যায়ন</a>
     <a onclick="showPage('duplicate');toggleMobile()">🔄 হারানো/দ্বি-নকল</a>
@@ -1168,7 +1171,9 @@ body {
             </div>
             <div class="service-pills">
               <div class="pill active"><i class="fas fa-check-circle"></i> মূল সনদ</div>
+              <div class="pill active"><i class="fas fa-check-circle"></i> সাময়িক সনদ</div>
               <div class="pill"><i class="fas fa-file-alt"></i> ট্রান্সক্রিপ্ট</div>
+              <div class="pill"><i class="fas fa-chart-bar"></i> মার্কশীট</div>
               <div class="pill"><i class="fas fa-edit"></i> সংশোধন</div>
               <div class="pill"><i class="fas fa-stamp"></i> সত্যায়ন</div>
               <div class="pill"><i class="fas fa-globe"></i> MOI</div>
@@ -1209,7 +1214,9 @@ body {
         </div>
         <div class="search-tags">
           <span class="search-tag" onclick="showPage('sanad')">মূল সনদ</span>
+          <span class="search-tag" onclick="showPage('Provisional')">সাময়িক সনদ</span>
           <span class="search-tag" onclick="showPage('transcript')">ট্রান্সক্রিপ্ট</span>
+          <span class="search-tag" onclick="showPage('marksheet')">মার্কশীট</span>
           <span class="search-tag" onclick="showPage('correction')">নাম সংশোধন</span>
           <span class="search-tag" onclick="showPage('moi')">MOI সার্টিফিকেট</span>
           <span class="search-tag" onclick="showPage('apostille')">এপোস্টিল</span>
@@ -1237,10 +1244,28 @@ body {
             <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
           </div>
         </div>
+        <div class="service-card" onclick="showPage('Provisional')">
+          <div class="card-icon blue"><i class="fas fa-file-signature"></i></div>
+          <div class="card-title">সাময়িক সনদ</div>
+          <div class="card-desc">মূল সনদ পাওয়ার আগ পর্যন্ত সাময়িক সনদ সংগ্রহের সম্পূর্ণ সহায়তা।</div>
+          <div class="card-meta">
+            <span class="card-time"><i class="far fa-clock"></i> ৫-১০ কার্যদিবস</span>
+            <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+        <div class="service-card" onclick="showPage('marksheet')">
+          <div class="card-icon navy"><i class="fas fa-chart-bar"></i></div>
+          <div class="card-title">মার্কশীট</div>
+          <div class="card-desc">আপনার একাডেমিক মার্কশীট সংগ্রহের পূর্ণ সহায়তা প্রদান। দেশে ও বিদেশে সকল উদ্দেশ্যে ব্যবহারযোগ্য।</div>
+          <div class="card-meta">
+            <span class="card-time"><i class="far fa-clock"></i> ১০-১৫ কার্যদিবস</span>
+            <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
         <div class="service-card" onclick="showPage('transcript')">
           <div class="card-icon navy"><i class="fas fa-file-alt"></i></div>
           <div class="card-title">ট্রান্সক্রিপ্ট</div>
-          <div class="card-desc">আপনার একাডেমিক ট্রান্সক্রিপ্ট সংগ্রহের পূর্ণ সহায়তা প্রদান। দেশে ও বিদেশে সকল উদ্দেশ্যে ব্যবহারযোগ্য।</div>
+          <div class="card-desc">আপনার একাডেমিক ট্রান্সক্রিপ্ট সংগ্রহের পূর্ণ সহায়তা প্রদান। দেশে ও বিদেশে সকল उद्देश्ये ब्यवहारयोग्य।</div>
           <div class="card-meta">
             <span class="card-time"><i class="far fa-clock"></i> ১০-১৫ কার্যদিবস</span>
             <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
@@ -1591,9 +1616,119 @@ body {
           <div class="sidebar-card">
             <h3>💰 সেবার ফি</h3>
             <table class="fee-table">
-              <tr><td>সরকারি ফি</td><td>৳৬০৬</td></tr>
               <tr><td>সার্ভিস চার্জ</td><td>৳৩,৫০০</td></tr>
               <tr><td><strong>মোট</strong></td><td><strong>৳৩,৫০০</strong></td></tr>
+            </table>
+          </div>
+          <div class="sidebar-card">
+            <h3>📞 সহায়তা</h3>
+            <div class="contact-card">
+              <div class="contact-item"><i class="fas fa-phone"></i> +880 1700-644245</div>
+              <div class="contact-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/01700-644245">01700-644245</a></div>
+              <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:tanmoy.hossen.work@gmail.com?subject=Website Inquiry&body=Hello, I want to know more.">tanmoy.hossen.work@gmail.com</a></div>
+              <div class="contact-item"><i class="far fa-clock"></i> শনি-বৃহস্পতি,  সকাল ৯টা- রাত ৯টা</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================== সাময়িক সনদ PAGE ======================== -->
+<div class="page" id="page-provisional">
+  <section class="service-hero">
+    <div class="container">
+      <div class="service-hero-content">
+        <div class="breadcrumb"><a onclick="showPage('home')">হোম</a><i class="fas fa-chevron-right"></i><span>সাময়িক সনদ</span></div>
+        <h1>সাময়িক সনদ সংগ্রহ সেবা</h1>
+        <p>জাতীয় বিশ্ববিদ্যালয় থেকে আপনার সাময়িক একাডেমিক সার্টিফিকেট সংগ্রহের সম্পূর্ণ সহায়তা প্রদান করা হয়।</p>
+        <div class="service-meta-badges">
+          <div class="meta-badge"><i class="far fa-clock"></i> ৭-১০০ কার্যদিবস</div>
+          <div class="meta-badge"><i class="fas fa-taka-sign"></i> সেবা ফি ৳২,৫০০</div>
+          <div class="meta-badge"><i class="fas fa-check-circle"></i> নিশ্চিত ডেলিভারি</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="service-content">
+    <div class="container">
+      <div class="service-layout">
+        <div class="main-content">
+          <div class="content-card">
+            <h2><i class="fas fa-info-circle"></i> সেবার বিবরণ</h2>
+            <p style="color:var(--text-muted);line-height:1.8;font-size:15px;">জাতীয় বিশ্ববিদ্যালয় থেকে সাময়িক সনদ সংগ্রহ একটি দীর্ঘ প্রক্রিয়া। আমরা আপনার পক্ষে বিশ্ববিদ্যালয়ে গিয়ে সকল আনুষ্ঠানিকতা সম্পন্ন করি এবং আপনার কাছে ডেলিভারি দিই। আপনাকে ঢাকায় না এলেও চলবে।</p>
+          </div>
+          <div class="content-card">
+            <h2><i class="fas fa-file-alt"></i> প্রয়োজনীয় কাগজপত্র</h2>
+            <ul class="doc-list">
+              <li class="doc-item"><i class="fas fa-check-circle"></i> কলেজ অধ্যক্ষের স্বাক্ষরিত আবেদন পত্র</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> পাসপোর্ট সাইজ রঙিন ছবি</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> জাতীয় পরিচয়পত্রের ফটোকপি (উভয় পাশ)</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> রেজিস্ট্রেশন কার্ডের ফটোকপি</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> এডমিট কার্ডের ফটোকপি</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> অনলাইন রেজাল্টশীট </li>
+            </ul>
+          </div>
+          <div class="content-card">
+            <h2><i class="fas fa-list-ol"></i> আবেদন প্রক্রিয়া</h2>
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="step-circle">১</div>
+                <div class="step-content">
+                  <h4>অনলাইনে ফর্ম পূরণ</h4>
+                  <p>আমাদের অনলাইন ফর্মে আপনার তথ্য ও ডকুমেন্ট আপলোড করুন।</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-circle">২</div>
+                <div class="step-content">
+                  <h4>পেমেন্ট সম্পন্ন করুন</h4>
+                  <p>বিকাশ, নগদ বা কার্ডে সেবা ফি পরিশোধ করুন।</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-circle">৩</div>
+                <div class="step-content">
+                  <h4>বিশ্ববিদ্যালয়ে জমা</h4>
+                  <p>আমরা আপনার পক্ষে বিশ্ববিদ্যালয়ে আবেদন জমা করি।</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-circle">৪</div>
+                <div class="step-content">
+                  <h4>সনদ সংগ্রহ ও ডেলিভারি</h4>
+                  <p>সনদ প্রস্তুত হলে কুরিয়ারে আপনার ঠিকানায় পাঠিয়ে দিই।</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-card">
+            <h2><i class="fas fa-question-circle"></i> প্রায়ই জিজ্ঞাসিত প্রশ্ন</h2>
+            <div class="faq-list" style="max-width:100%">
+              <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-q">সাময়িক সনদ হারিয়ে গেলে কী হবে? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-a">যদি সনদ হারিয়ে যায় তাহলে 'হারানো/দ্বি-নকল সনদ' সেবার জন্য আবেদন করতে হবে।</div>
+              </div>
+              <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-q">পুরনো বছরের সনদ সংগ্রহ সম্ভব? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-a">হ্যাঁ, যেকোনো বছরের সনদ সংগ্রহ করা সম্ভব। তবে সময় একটু বেশি লাগতে পারে।</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar">
+          <div class="apply-card">
+            <h3>📜 সাময়িক সনদের জন্য আবেদন</h3>
+            <p>এখনই আবেদন করুন এবং দ্রুত আপনার সনদ পান</p>
+            <button class="btn-apply-white" onclick="openApplyForm('মূল সনদ')"><i class="fas fa-paper-plane"></i> আবেদন করুন</button>
+            <button style="display:block;width:100%;padding:11px;background:transparent;color:white;border:1.5px solid rgba(255,255,255,0.5);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;" onclick="showPage('contact')"><i class="fas fa-phone-alt"></i> পরামর্শ নিন</button>
+          </div>
+          <div class="sidebar-card">
+            <h3>💰 সেবার ফি</h3>
+            <table class="fee-table">
+              <tr><td>সার্ভিস চার্জ</td><td>৳২,৫০০</td></tr>
+              <tr><td><strong>মোট</strong></td><td><strong>৳২,৫০০</strong></td></tr>
             </table>
           </div>
           <div class="sidebar-card">
@@ -1666,9 +1801,74 @@ body {
           <div class="sidebar-card">
             <h3>💰 সেবার ফি</h3>
             <table class="fee-table">
-              <tr><td>সরকারি ফি</td><td>৳৭0৭</td></tr>
               <tr><td>সার্ভিস চার্জ</td><td>৳৩,৫০০</td></tr>
               <tr><td><strong>মোট</strong></td><td><strong>৳৩,৫০০</strong></td></tr>
+            </table>
+          </div>
+          <div class="sidebar-card"><h3>📞 সহায়তা</h3><div class="contact-card"><div class="contact-item"><i class="fas fa-phone"></i> +880 1700-644245</div><div class="contact-item"><i class="fab fa-whatsapp"></i> WhatsApp সহায়তা</div><div class="contact-item"><i class="far fa-clock"></i> শনি-বৃহস্পতি, ৯টা-৫টা</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ======================== মার্কশীট PAGE ======================== -->
+<div class="page" id="page-marksheet">
+  <section class="service-hero">
+    <div class="container">
+      <div class="service-hero-content">
+        <div class="breadcrumb"><a onclick="showPage('home')">হোম</a><i class="fas fa-chevron-right"></i><span>মার্কশীট</span></div>
+        <h1>মার্কশীট সংগ্রহ সেবা</h1>
+        <p>একাডেমিক মার্কশীট দেশে চাকরি, উচ্চশিক্ষা ও ভিসা আবেদনে অপরিহার্য। আমরা দ্রুত ও নির্ভরযোগ্যভাবে এই সেবা প্রদান করি।</p>
+        <div class="service-meta-badges">
+          <div class="meta-badge"><i class="far fa-clock"></i> ৭-১০ কার্যদিবস</div>
+          <div class="meta-badge"><i class="fas fa-taka-sign"></i> সেবা ফি ৳২,৫০০</div>
+          <div class="meta-badge"><i class="fas fa-globe"></i> আন্তর্জাতিক মান</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="service-content">
+    <div class="container">
+      <div class="service-layout">
+        <div class="main-content">
+          <div class="content-card">
+            <h2><i class="fas fa-info-circle"></i> সেবার বিবরণ</h2>
+            <p style="color:var(--text-muted);line-height:1.8;font-size:15px;">মার্কশীট হলো আপনার সকল বর্ষের পরীক্ষার ফলাফলের অফিসিয়াল রেকর্ড। দেশে উচ্চশিক্ষা, ভিসা আবেদন বা WES/ECA মূল্যায়নের জন্য এটি আবশ্যক। আমরা বিশ্ববিদ্যালয় থেকে সরাসরি সংগ্রহ করে দিই।</p>
+          </div>
+          <div class="content-card">
+            <h2><i class="fas fa-file-alt"></i> প্রয়োজনীয় কাগজপত্র</h2>
+            <ul class="doc-list">
+            <li class="doc-item"><i class="fas fa-check-circle"></i> কলেজ অধ্যক্ষের স্বাক্ষরিত আবেদন পত্র</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> পাসপোর্ট সাইজ রঙিন ছবি</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> জাতীয় পরিচয়পত্রের ফটোকপি (উভয় পাশ)</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> রেজিস্ট্রেশন কার্ডের ফটোকপি</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> এডমিট কার্ডের ফটোকপি</li>
+              <li class="doc-item"><i class="fas fa-check-circle"></i> অনলাইন রেজাল্ট</li>
+            </ul>
+          </div>
+          <div class="content-card">
+            <h2><i class="fas fa-list-ol"></i> আবেদন প্রক্রিয়া</h2>
+            <div class="process-steps">
+              <div class="process-step"><div class="step-circle">১</div><div class="step-content"><h4>ফর্ম পূরণ ও ডকুমেন্ট আপলোড</h4><p>অনলাইনে আবেদন ফর্ম পূরণ করে সকল কাগজপত্র আপলোড করা।</p></div></div>
+              <div class="process-step"><div class="step-circle">২</div><div class="step-content"><h4>ফি পরিশোধ</h4><p>সার্ভিস ফি মোবাইল ব্যাংকিং বা কার্ডে পরিশোধ করা।</p></div></div>
+              <div class="process-step"><div class="step-circle">৩</div><div class="step-content"><h4>বিশ্ববিদ্যালয়ে প্রক্রিয়াকরণ</h4><p>আমরা বিশ্ববিদ্যালয়ে আবেদন জমা দিয়ে প্রক্রিয়া সম্পন্ন করি।</p></div></div>
+              <div class="process-step"><div class="step-circle">৪</div><div class="step-content"><h4>ডেলিভারি</h4><p>ট্রান্সক্রিপ্ট প্রস্তুত হলে কুরিয়ারে ঠিকানায় পাঠানো হবে।</p></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar">
+          <div class="apply-card">
+            <h3>📋 মার্কশীটের জন্য আবেদন</h3>
+            <p>দ্রুত সেবার জন্য এখনই আবেদন করুন</p>
+            <button class="btn-apply-white" onclick="openApplyForm('মার্কশীট')"><i class="fas fa-paper-plane"></i> আবেদন করুন</button>
+          </div>
+          <div class="sidebar-card">
+            <h3>💰 সেবার ফি</h3>
+            <table class="fee-table">
+              <tr><td>সার্ভিস চার্জ</td><td>৳২,৫০০</td></tr>
+              <tr><td><strong>মোট</strong></td><td><strong>৳২,৫০০</strong></td></tr>
             </table>
           </div>
           <div class="sidebar-card"><h3>📞 সহায়তা</h3><div class="contact-card"><div class="contact-item"><i class="fas fa-phone"></i> +880 1700-644245</div><div class="contact-item"><i class="fab fa-whatsapp"></i> WhatsApp সহায়তা</div><div class="contact-item"><i class="far fa-clock"></i> শনি-বৃহস্পতি, ৯টা-৫টা</div></div></div>
@@ -1859,11 +2059,8 @@ body {
           <div class="sidebar-card">
             <h3>💰 সেবার ফি</h3>
             <table class="fee-table">
-              <tr><td>সরকারি ফি</td><td>৳১,৫০০</td></tr>
-              <tr><td>সংবাদপত্র বিজ্ঞপ্তি</td><td>৳৬০০</td></tr>
-              <tr><td>সার্ভিস চার্জ</td><td>৳১,৪০০</td></tr>
-              <tr><td>কুরিয়ার</td><td>৳৫০০</td></tr>
-              <tr><td><strong>মোট</strong></td><td><strong>৳৪,০০০</strong></td></tr>
+              <tr><td>সার্ভিস চার্জ</td><td>৳৩,০০০</td></tr>
+              <tr><td><strong>মোট</strong></td><td><strong>৳৩,০০০</strong></td></tr>
             </table>
           </div>
           <div class="sidebar-card"><h3>📞 সহায়তা</h3><div class="contact-card"><div class="contact-item"><i class="fas fa-phone"></i> +880 1700-000000</div><div class="contact-item"><i class="fab fa-whatsapp"></i> WhatsApp সহায়তা</div></div></div>
@@ -1878,7 +2075,7 @@ body {
   <section class="service-hero">
     <div class="container">
       <div class="service-hero-content">
-        <div class="breadcrumb"><a onclick="showPage('home')">হোম</a><i class="fas fa-chevron-right"></i><span>MOI-WES-ECA</span></div>
+        <div class="breadcrumb"><a onclick="showPage('home')">হোম</a><i class="fas fa-chevron-right"></i><span>MOI</span></div>
         <h1>MOI / WES / ECA সেবা</h1>
         <p>বিদেশে উচ্চশিক্ষা, চাকরি বা মাইগ্রেশনের জন্য শিক্ষাগত যোগ্যতা মূল্যায়নে সম্পূর্ণ সহায়তা প্রদান।</p>
         <div class="service-meta-badges">
@@ -2082,7 +2279,9 @@ body {
             <select>
               <option>সেবা নির্বাচন করুন</option>
               <option>মূল সনদ</option>
+              <option>সাময়িক সনদ</option>
               <option>ট্রান্সক্রিপ্ট</option>
+              <option>মার্কশীট</option>
               <option>সংশোধন</option>
               <option>সত্যায়ন</option>
               <option>হারানো/দ্বি-নকল</option>
@@ -2126,7 +2325,9 @@ body {
         <div class="footer-col-title">আমাদের সেবা</div>
         <ul class="footer-links">
           <li><a onclick="showPage('sanad')">মূল সনদ</a></li>
+          <li><a onclick="showPage('samoyik')">সাময়িক সনদ</a></li>
           <li><a onclick="showPage('transcript')">ট্রান্সক্রিপ্ট</a></li>
+          <li><a onclick="showPage('marksheet')">মার্কশীট</a></li>
           <li><a onclick="showPage('correction')">সংশোধন</a></li>
           <li><a onclick="showPage('attestation')">সত্যায়ন</a></li>
           <li><a onclick="showPage('duplicate')">হারানো/দ্বি-নকল</a></li>
