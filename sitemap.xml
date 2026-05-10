@@ -1,10 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-  <loc>https://nu-easy-service.vercel.app/</loc>
-  <lastmod>2026-05-09</lastmod>
-  <priority>1.0</priority>
-</url>
+  <!-- Home Page -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- মূল সনদ -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#sanad</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- সাময়িক সনদ -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#samoyik</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ট্রান্সক্রিপ্ট -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#transcript</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- মার্কশীট -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#marksheet</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- সংশোধন -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#correction</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- সত্যায়ন -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#attestation</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- হারানো / দ্বি-নকল -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#duplicate</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- MOI -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#moi</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Apostille -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#apostille</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Track Application -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#track</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#contact</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://nu-easy-service.vercel.app/#about</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
 </urlset>
