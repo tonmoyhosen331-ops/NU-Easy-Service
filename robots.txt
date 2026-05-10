@@ -1,4 +1,14 @@
+# robots.txt for NU Easy Service
+# https://nu-easy-service.vercel.app
+
+# Allow all search engine crawlers
 User-agent: *
 Allow: /
 
+# Block private/admin paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Sitemap location
 Sitemap: https://nu-easy-service.vercel.app/sitemap.xml
