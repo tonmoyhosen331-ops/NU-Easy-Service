@@ -370,54 +370,7 @@ body {
 .stat-divider { width: 1px; background: rgba(255,255,255,0.2); }
 
 /* Hero Card Visual */
-.hero-visual { position: relative; }
 
-.hero-card-main {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px;
-  padding: 28px;
-  color: white;
-}
-
-.hero-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-.hero-card-icon { width: 42px; height: 42px; background: var(--green); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
-.hero-card-title { font-size: 16px; font-weight: 600; }
-.hero-card-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
-
-.service-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.pill {
-  padding: 6px 14px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 50px;
-  font-size: 12px;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.pill.active { background: var(--green); border-color: var(--green); }
-
-.progress-item { margin-bottom: 14px; }
-.progress-label { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
-.progress-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
-.progress-fill { height: 100%; background: linear-gradient(90deg, var(--green-light), var(--green)); border-radius: 3px; }
-
-.floating-badge {
-  position: absolute;
-  background: white;
-  border-radius: 12px;
-  padding: 10px 16px;
-  box-shadow: var(--shadow-xl);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--navy);
-}
 
 .floating-badge.top { top: -20px; right: 20px; }
 .floating-badge.bottom { bottom: -16px; left: 10px; }
@@ -1087,14 +1040,14 @@ body {
     <ul class="nav-menu" id="navMenu">
       <li><a onclick="showPage('home')" id="nav-home" class="active">হোম</a></li>
       <li><a onclick="showPage('sanad')" id="nav-sanad">মূল সনদ</a></li>
-      <li><a onclick="showPage('provisional')" id="nav-sanad">সাময়িক সনদ</a></li>
+      <li><a onclick="showPage('provisional')" id="nav-provisional">সাময়িক সনদ</a></li>
       <li><a onclick="showPage('transcript')" id="nav-transcript">ট্রান্সক্রিপ্ট</a></li>
-      <li><a onclick="showPage('marksheet')" id="nav-sanad">মার্কশীট</a></li>
+      <li><a onclick="showPage('marksheet')" id="nav-marksheet">মার্কশীট</a></li>
       <li><a onclick="showPage('correction')" id="nav-correction">সংশোধন</a></li>
       <li><a onclick="showPage('attestation')" id="nav-attestation">সত্যায়ন</a></li>
       <li><a onclick="showPage('duplicate')" id="nav-duplicate">হারানো/দ্বি-নকল</a></li>
       <li><a onclick="showPage('moi')" id="nav-moi">MOI</a></li>
-      <li><a onclick="showPage('apostille')" id="nav-apostille">অ্যাপোস্টিল</a></li>
+      <li><a onclick="showPage('apostille')" id="nav-apostille">অ্যাপোস্টিল</a></li>
       <li><a onclick="showPage('contact')" id="nav-contact">যোগাযোগ</a></li>
     </ul>
     <div class="nav-actions">
@@ -1107,14 +1060,14 @@ body {
   <div class="mobile-nav" id="mobileNav">
     <a onclick="showPage('home');toggleMobile()">🏠 হোম</a>
     <a onclick="showPage('sanad');toggleMobile()">📜 মূল সনদ</a>
-    <a onclick="showPage('Provisional');toggleMobile()">📝 সাময়িক সনদ</a>
+    <a onclick="showPage('provisional');toggleMobile()">📝 সাময়িক সনদ</a>
     <a onclick="showPage('transcript');toggleMobile()">📋 ট্রান্সক্রিপ্ট</a>
     <a onclick="showPage('marksheet');toggleMobile()">📊 মার্কশীট</a>
     <a onclick="showPage('correction');toggleMobile()">✏️ সংশোধন</a>
     <a onclick="showPage('attestation');toggleMobile()">✅ সত্যায়ন</a>
     <a onclick="showPage('duplicate');toggleMobile()">🔄 হারানো/দ্বি-নকল</a>
     <a onclick="showPage('moi');toggleMobile()">🌐 MOI</a>
-    <a onclick="showPage('apostille');toggleMobile()">🔏 অ্যাপোস্টিল</a>
+    <a onclick="showPage('apostille');toggleMobile()">🔏 অ্যাপোস্টিল</a>
     <a onclick="showPage('contact');toggleMobile()">📞 যোগাযোগ</a>
   </div>
 </nav>
@@ -1131,7 +1084,7 @@ body {
         <div class="hero-left">
           <div class="hero-badge"><div class="dot"></div> ১০০% অনলাইন সেবা নিশ্চিত</div>
           <h1>জাতীয় বিশ্ববিদ্যালয়ের সেবা এখন <span class="highlight">আপনার হাতের মুঠোয়</span></h1>
-          <p class="hero-desc">সনদ, ট্রান্সক্রিপ্ট, সংশোধন থেকে শুরু করে MOI ও এপোস্টিল পর্যন্ত সকল সেবা এক জায়গায়। দ্রুত, নিরাপদ ও ঝামেলামুক্ত সেবা পান।</p>
+          <p class="hero-desc">সনদ, ট্রান্সক্রিপ্ট, সংশোধন থেকে শুরু করে MOI ও অ্যাপোস্টিল পর্যন্ত সকল সেবা এক জায়গায়। দ্রুত, নিরাপদ ও ঝামেলামুক্ত সেবা পান।</p>
           <div class="hero-actions">
             <button class="btn-primary" onclick="showPage('sanad')"><i class="fas fa-rocket"></i> আবেদন শুরু করুন</button>
             <button class="btn-outline-white" onclick="scrollToSection('services')"><i class="fas fa-list"></i> সকল সেবা দেখুন</button>
@@ -1151,55 +1104,13 @@ body {
               <div class="stat-number">৯৮%</div>
               <div class="stat-label">সন্তুষ্টির হার</div>
             </div>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="floating-badge top">
-            <div class="floating-badge-icon" style="background:#dcfce7"><i class="fas fa-check" style="color:var(--green)"></i></div>
-            <div>
-              <div style="font-size:12px;color:var(--text-muted)">সাফল্যের হার</div>
-              <div style="font-size:16px;font-weight:800;color:var(--navy)">৯৮.৫%</div>
-            </div>
-          </div>
-          <div class="hero-card-main">
-            <div class="hero-card-header">
-              <div class="hero-card-icon"><i class="fas fa-graduation-cap"></i></div>
-              <div>
-                <div class="hero-card-title">আবেদনের স্ট্যাটাস</div>
-                <div class="hero-card-sub">আপনার আবেদন ট্র্যাক করুন</div>
-              </div>
-            </div>
-            <div class="service-pills">
-              <div class="pill active"><i class="fas fa-check-circle"></i> মূল সনদ</div>
-              <div class="pill active"><i class="fas fa-check-circle"></i> সাময়িক সনদ</div>
-              <div class="pill"><i class="fas fa-file-alt"></i> ট্রান্সক্রিপ্ট</div>
-              <div class="pill"><i class="fas fa-chart-bar"></i> মার্কশীট</div>
-              <div class="pill"><i class="fas fa-edit"></i> সংশোধন</div>
-              <div class="pill"><i class="fas fa-stamp"></i> সত্যায়ন</div>
-              <div class="pill"><i class="fas fa-globe"></i> MOI</div>
-            </div>
-            <div class="progress-item">
-              <div class="progress-label"><span>মূল সনদ প্রক্রিয়াকরণ</span><span>৮৫%</span></div>
-              <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
-            </div>
-            <div class="progress-item">
-              <div class="progress-label"><span>ট্রান্সক্রিপ্ট যাচাই</span><span>৬০%</span></div>
-              <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
-            </div>
-            <div class="progress-item">
-              <div class="progress-label"><span>অ্যাপোস্টিল প্রক্রিয়া</span><span>৪০%</span></div>
-              <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
-            </div>
-          </div>
-          <div class="floating-badge bottom">
-            <div class="floating-badge-icon" style="background:#eff6ff"><i class="fas fa-users" style="color:#1d4ed8"></i></div>
-            <div>
-              <div style="font-size:12px;color:var(--text-muted)">আজ আবেদন করেছেন</div>
-              <div style="font-size:15px;font-weight:800;color:var(--navy)"> ২৩৫ জন</div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <div class="stat-number">১০৫+ জন</div>
+              <div class="stat-label">আজকের আবেদন</div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </section>
 
@@ -1219,7 +1130,7 @@ body {
           <span class="search-tag" onclick="showPage('marksheet')">মার্কশীট</span>
           <span class="search-tag" onclick="showPage('correction')">নাম সংশোধন</span>
           <span class="search-tag" onclick="showPage('moi')">MOI সার্টিফিকেট</span>
-          <span class="search-tag" onclick="showPage('apostille')">অ্যাপোস্টিল</span>
+          <span class="search-tag" onclick="showPage('apostille')">অ্যাপোস্টিল</span>
           <span class="search-tag" onclick="showPage('duplicate')">দ্বি-নকল সনদ</span>
         </div>
       </div>
@@ -1244,7 +1155,7 @@ body {
             <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
           </div>
         </div>
-        <div class="service-card" onclick="showPage('Provisional')">
+        <div class="service-card" onclick="showPage('provisional')">
           <div class="card-icon blue"><i class="fas fa-file-signature"></i></div>
           <div class="card-title">সাময়িক সনদ</div>
           <div class="card-desc">মূল সনদ পাওয়ার আগ পর্যন্ত সাময়িক সনদ সংগ্রহের সম্পূর্ণ সহায়তা।</div>
@@ -1309,8 +1220,8 @@ body {
         </div>
         <div class="service-card" onclick="showPage('apostille')">
           <div class="card-icon amber"><i class="fas fa-certificate"></i></div>
-          <div class="card-title">অ্যাপোস্টিল</div>
-          <div class="card-desc">হেগ কনভেনশন অনুযায়ী বিদেশে ব্যবহারের জন্য সরকারি এপোস্টিল সিল সংযোজন।</div>
+          <div class="card-title">অ্যাপোস্টিল সেবা</div>
+          <div class="card-desc">হেগ কনভেনশন অনুযায়ী বিদেশে ব্যবহারের জন্য সরকারি অ্যাপোস্টিল সিল সংযোজন।</div>
           <div class="card-meta">
             <span class="card-time"><i class="far fa-clock"></i> ১৫-২০ কার্যদিবস</span>
             <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
@@ -1368,7 +1279,7 @@ body {
     <div class="container">
       <div class="stats-row">
         <div class="stat-box">
-          <div class="num">৫০<span>K+</span></div>
+          <div class="num">১<span>K+</span></div>
           <div class="lbl">সফল আবেদন</div>
         </div>
         <div class="stat-box">
@@ -1499,7 +1410,7 @@ body {
       <div class="faq-list">
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-q">আবেদন করতে কী কী কাগজপত্র লাগে? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-          <div class="faq-a">প্রতিটি সেবার জন্য আলাদা কাগজপত্র প্রয়োজন। সাধারণত: পাসপোর্ট সাইজ ছবি, জাতীয় পরিচয়পত্র, মার্কশিট/প্রভিশনাল সার্টিফিকেট, প্রতি বর্ষের প্রবেশ পত্র এবং রেজিস্ট্রেশন কার্ড প্রয়োজন হয়।</div>
+          <div class="faq-a">প্রতিটি সেবার জন্য আলাদা কাগজপত্র প্রয়োজন। সাধারণত: পাসপোর্ট সাইজ ছবি, জাতীয় পরিচয়পত্র, মার্কশিট/প্রভিশনাল সার্টিফিকেট, প্রতি বর্ষের প্রবেশ পত্র, রেজিস্ট্রেশন কার্ড, এইচএসসি সনদ প্রয়োজন হয়।</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-q">আবেদনের পর কীভাবে স্ট্যাটাস জানবো? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
@@ -2504,14 +2415,14 @@ body {
 </div>
 
 
-<!-- ======================== এপোস্টিল PAGE ======================== -->
+<!-- ======================== অ্যাপোস্টিল PAGE ======================== -->
 <div class="page" id="page-apostille">
   <section class="service-hero">
     <div class="container">
       <div class="service-hero-content">
-        <div class="breadcrumb"><a onclick="showPage('home')">হোম</a><i class="fas fa-chevron-right"></i><span>এপোস্টিল</span></div>
-        <h1>এপোস্টিল সেবা</h1>
-        <p>হেগ কনভেনশন অনুযায়ী বিদেশী দেশে ব্যবহারের জন্য সরকারি এপোস্টিল সিল সংযোজনে সম্পূর্ণ সহায়তা।</p>
+        <div class="breadcrumb"><a onclick="showPage('home')">হোম</a><i class="fas fa-chevron-right"></i><span>অ্যাপোস্টিল</span></div>
+        <h1>অ্যাপোস্টিল সেবা</h1>
+        <p>হেগ কনভেনশন অনুযায়ী বিদেশী দেশে ব্যবহারের জন্য সরকারি অ্যাপোস্টিল সিল সংযোজনে সম্পূর্ণ সহায়তা।</p>
         <div class="service-meta-badges">
           <div class="meta-badge"><i class="far fa-clock"></i> ০৭-১০ কার্যদিবস</div>
           <div class="meta-badge"><i class="fas fa-taka-sign"></i> সেবা ফি ৳৩,৫০০</div>
@@ -2525,8 +2436,8 @@ body {
       <div class="service-layout">
         <div class="main-content">
           <div class="content-card">
-            <h2><i class="fas fa-info-circle"></i> এপোস্টিল কী?</h2>
-            <p style="color:var(--text-muted);line-height:1.8;font-size:15px;">এপোস্টিল হলো হেগ কনভেনশনের অধীনে একটি বিশেষ আন্তর্জাতিক সত্যায়ন পদ্ধতি। এটি দিয়ে কোনো দেশের সরকারি নথিকে অন্য দেশে দূতাবাস সত্যায়ন ছাড়াই গ্রহণযোগ্য করা হয়। ইউরোপ, মধ্যপ্রাচ্যসহ ১২০টিরও বেশি দেশে এপোস্টিল গ্রহণযোগ্য।</p>
+            <h2><i class="fas fa-info-circle"></i> অ্যাপোস্টিল কী?</h2>
+            <p style="color:var(--text-muted);line-height:1.8;font-size:15px;">অ্যাপোস্টিল হলো হেগ কনভেনশনের অধীনে একটি বিশেষ আন্তর্জাতিক সত্যায়ন পদ্ধতি। এটি দিয়ে কোনো দেশের সরকারি নথিকে অন্য দেশে দূতাবাস সত্যায়ন ছাড়াই গ্রহণযোগ্য করা হয়। ইউরোপ, মধ্যপ্রাচ্যসহ ১২০টিরও বেশি দেশে অ্যাপোস্টিল গ্রহণযোগ্য।</p>
           </div>
           <div class="content-card">
             <h2><i class="fas fa-file-alt"></i> প্রয়োজনীয় কাগজপত্র</h2>
@@ -2539,13 +2450,13 @@ body {
             </ul>
           </div>
           <div class="content-card">
-            <h2><i class="fas fa-list-ol"></i>এপোস্টিল আবেদন প্রক্রিয়া</h2>
+            <h2><i class="fas fa-list-ol"></i>অ্যাপোস্টিল আবেদন প্রক্রিয়া</h2>
             <div class="process-steps">
               <div class="process-step">
                 <div class="step-circle">১</div>
                 <div class="step-content">
                   <h4>অনলাইনে আবেদন</h4>
-                  <p>প্রথমে MyGov বা নির্ধারিত সরকারি পোর্টালে এপোস্টিলের জন্য আবেদন করতে হবে।</p>
+                  <p>প্রথমে MyGov বা নির্ধারিত সরকারি পোর্টালে অ্যাপোস্টিলের জন্য আবেদন করতে হবে।</p>
                 </div>
               </div>
               <div class="process-step">
@@ -2563,8 +2474,8 @@ body {
               <div class="process-step">
                 <div class="step-circle">৪</div>
                 <div class="step-content">
-                  <h4>এপোস্টিল সংগ্রহ</h4>
-                  <p>প্রক্রিয়া সম্পন্ন হলে এপোস্টিলকৃত ডকুমেন্ট সংগ্রহ করা যায় MyGov সরকারি পোর্টালের মাধ্যমে ডাউনলোড করতে হয়।</p>
+                  <h4>অ্যাপোস্টিল সংগ্রহ</h4>
+                  <p>প্রক্রিয়া সম্পন্ন হলে অ্যাপোস্টিলকৃত ডকুমেন্ট সংগ্রহ করা যায় MyGov সরকারি পোর্টালের মাধ্যমে ডাউনলোড করতে হয়।</p>
                 </div>
               </div>
             </div>
@@ -2573,31 +2484,31 @@ body {
             <h2><i class="fas fa-question-circle"></i> প্রায়ই জিজ্ঞাসিত প্রশ্ন</h2>
             <div class="faq-list" style="max-width:100%">
               <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">এপোস্টিল কী? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-                <div class="faq-a">এপোস্টিল হলো আন্তর্জাতিকভাবে স্বীকৃত একটি সত্যায়ন পদ্ধতি, যা বিদেশে ডকুমেন্ট গ্রহণযোগ্য করতে ব্যবহৃত হয়।</div>
+                <div class="faq-q">অ্যাপোস্টিল কী? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-a">অ্যাপোস্টিল হলো আন্তর্জাতিকভাবে স্বীকৃত একটি সত্যায়ন পদ্ধতি, যা বিদেশে ডকুমেন্ট গ্রহণযোগ্য করতে ব্যবহৃত হয়।</div>
               </div>
               <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">এপোস্টিল করতে কত দিন সময় লাগে? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-q">অ্যাপোস্টিল করতে কত দিন সময় লাগে? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
                 <div class="faq-a">সাধারণত ৭–১৫ কার্যদিবস সময় লাগে।</div>
               </div>
                 <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">এপোস্টিলের জন্য কী কী কাগজপত্র লাগে? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-q">অ্যাপোস্টিল এর জন্য কী কী কাগজপত্র লাগে? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
                 <div class="faq-a">মূল সনদ, ট্রান্সক্রিপ্ট, জাতীয় পরিচয়পত্র/পাসপোর্ট কপি প্রয়োজন হয়।</div>
               </div>
                <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">অনলাইনে এপোস্টিলের আবেদন করা যায় কি? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-q">অনলাইনে অ্যাপোস্টিলের আবেদন করা যায় কি? <div class="faq-icon"><i class="fas fa-plus"></i></div></div>
                 <div class="faq-a">হ্যাঁ, MyGov এর মাধ্যমে অনলাইনে আবেদন করা যায়।</div>
               </div>
                 <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">এপোস্টিল করা ডকুমেন্ট কোন কোন দেশে গ্রহণযোগ্য?<div class="faq-icon"><i class="fas fa-plus"></i></div></div>
-                <div class="faq-a">হেগ কনভেনশনভুক্ত বিভিন্ন দেশে এপোস্টিল করা ডকুমেন্ট গ্রহণযোগ্য।</div>
+                <div class="faq-q">অ্যাপোস্টিল করা ডকুমেন্ট কোন কোন দেশে গ্রহণযোগ্য?<div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-a">হেগ কনভেনশনভুক্ত বিভিন্ন দেশে অ্যাপোস্টিল করা ডকুমেন্ট গ্রহণযোগ্য।</div>
               </div>
             </div>
           </div>
         </div>
         <div class="sidebar">
           <div class="apply-card">
-            <h3>🔏 এপোস্টিলের জন্য আবেদন</h3>
+            <h3>🔏 অ্যাপোস্টিলের জন্য আবেদন</h3>
             <p>আন্তর্জাতিক মানের সত্যায়ন নিশ্চিত করুন</p>
             <button class="btn-apply-white" onclick="openApplyForm('MOI/WES/ECA')"><i class="fas fa-paper-plane"></i> আবেদন করুন</button>
             <button style="display:block;width:100%;padding:11px;background:transparent;color:white;border:1.5px solid rgba(255,255,255,0.5);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;" onclick="showPage('contact')"><i class="fas fa-phone-alt"></i> পরামর্শ নিন</button>
@@ -2606,7 +2517,7 @@ body {
             <h3>💰 💰 সেবার ফি</h3>
            <table class="fee-table">
               <tr><td>সত্যায়ন ফি</td><td>৳১,০০০</td></tr>
-              <tr><td>এপোস্টিল ফি</td><td>৳১,০০০</td></tr>
+              <tr><td>অ্যাপোস্টিল ফি</td><td>৳১,০০০</td></tr>
               <tr><td>সার্ভিস চার্জ</td><td>৳১,০০০</td></tr>
               <tr><td>কুরিয়ার</td><td>৳৫০০</td></tr>
               <tr><td><strong>মোট</strong></td><td><strong>৳৩,৫০০</strong></td></tr>
@@ -2710,7 +2621,7 @@ body {
               <option>সত্যায়ন</option>
               <option>হারানো/দ্বি-নকল</option>
               <option>MOI-WES-ECA</option>
-              <option>এপোস্টিল</option>
+              <option>অ্যাপোস্টিল</option>
               <option>অন্যান্য</option>
             </select>
           </div>
@@ -2756,7 +2667,7 @@ body {
           <li><a onclick="showPage('attestation')">সত্যায়ন</a></li>
           <li><a onclick="showPage('duplicate')">হারানো/দ্বি-নকল</a></li>
           <li><a onclick="showPage('moi')">MOI</a></li>
-          <li><a onclick="showPage('apostille')">এপোস্টিল</a></li>
+          <li><a onclick="showPage('apostille')">অ্যাপোস্টিল</a></li>
           <li><a onclick="showPage('contact')">যোগাযোগ</a></li>
         </ul>
       </div>
