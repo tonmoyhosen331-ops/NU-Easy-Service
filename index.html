@@ -218,6 +218,7 @@ body {
 /* ===== BUTTONS ===== */
 .btn-primary {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
@@ -234,7 +235,7 @@ body {
   box-shadow: 0 4px 15px rgba(22,163,74,0.35);
 }
 
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(22,163,74,0.45); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(67, 182, 92, 0.45); }
 
 .btn-secondary {
   display: inline-flex;
@@ -2598,23 +2599,23 @@ body {
           <div class="form-row">
             <div class="form-group">
               <label>আপনার নাম *</label>
-              <input type="text" placeholder="পূর্ণ নাম লিখুন">
+              <input type="text" id="name" placeholder="পূর্ণ নাম লিখুন">
             </div>
             <div class="form-group">
               <label>মোবাইল নম্বর *</label>
-              <input type="tel" placeholder="০১XXXXXXXXX">
+              <input type="tel" id="phone" placeholder="০১XXXXXXXXX">
             </div>
           </div>
           <div class="form-group">
             <label>ইমেইল ঠিকানা</label>
-            <input type="email" placeholder="example@email.com">
+            <input type="email" id="email" placeholder="example@email.com">
           </div>
           <div class="form-group">
             <label>সেবার ধরন</label>
-            <select>
+            <select id="service">
               <option>সেবা নির্বাচন করুন</option>
               <option>মূল সনদ</option>
-              <option>সাময়িক সনদ</option>
+              <option>সাময়িক সনদ</option>
               <option>ট্রান্সক্রিপ্ট</option>
               <option>মার্কশীট</option>
               <option>সংশোধন</option>
@@ -2627,14 +2628,43 @@ body {
           </div>
           <div class="form-group">
             <label>বার্তা *</label>
-            <textarea placeholder="আপনার প্রশ্ন বা সমস্যার বিবরণ লিখুন..."></textarea>
+            <textarea id="message" placeholder="আপনার প্রশ্ন বা সমস্যার বিবরণ লিখুন..."></textarea>
           </div>
-          <button class="btn-primary w-full" onclick="submitContact()" style="width:100%;justify-content:center;"><i class="fas fa-paper-plane"></i> বার্তা পাঠান</button>
+          <button type="button" class="btn-primary w-full" onclick="sendToWhatsApp()">
+  <i class="fab fa-whatsapp"></i> বার্তা পাঠান
+</button>
         </div>
       </div>
     </div>
   </section>
 </div>
+
+<script>
+function sendToWhatsApp() {
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+  let service = document.getElementById("service").value;
+  let message = document.getElementById("message").value;
+
+  let text =
+`নতুন যোগাযোগ বার্তা
+
+👤 নাম: ${name}
+📞 মোবাইল: ${phone}
+📧 ইমেইল: ${email}
+🛠️ সেবা: ${service}
+
+📝 বার্তা:
+${message}`;
+
+  let whatsappURL =
+`https://wa.me/8801700644245?text=${encodeURIComponent(text)}`;
+
+  window.open(whatsappURL, "_blank");
+}
+</script>
 
 <!-- ===== FOOTER (SHARED) ===== -->
 <footer class="footer" id="main-footer">
